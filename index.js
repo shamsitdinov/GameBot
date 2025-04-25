@@ -18,8 +18,7 @@ function botPlay() {
             return bot.sendMessage(chatId, `Good morning ${message.chat.first_name}`)
         }
         if (text === '/about') {
-            await bot.sendPhoto(chatId, "https://ih1.redbubble.net/image.404031065.2191/st,small,507x507-pad,600x600,f8f8f8.u1.jpg")
-            return bot.sendMessage(chatId, `Your username ${message.chat.username}`)
+            return bot.sendMessage(chatId, `My telegram channel t.me/nodir_dev1`)
         }
         if (text === '/play') {
             await bot.sendMessage(chatId, 'Find a random number')
