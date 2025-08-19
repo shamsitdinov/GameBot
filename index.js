@@ -40,9 +40,10 @@ function botPlay() {
             return bot.sendMessage(chatId, 'Raqamini kiriting 0-9', playOptions)
         }
         if (userNumber == randomNumber) {
-            return bot.sendMessage(chatId, `Tabriklaymiz! Sizning raqamingiz ${userNumber} va tasodifiy son ( ${randomNumber} )`, againPlayOptions)
+            await bot.sendMessage(chatId, `Tabriklaymiz! Sizning raqamingiz ${userNumber} va tasodifiy son ( ${randomNumber} )`, againPlayOptions)
+            await bot.sendSticker(chatId,"https://cdn2.combot.org/stoyakronaldaxd/webp/5xf09f918e.webp")
         } else {
-            return bot.sendMessage(chatId, `Yo'q, yo'q! Sizning raqamingiz ${userNumber} va tasodifiy son ( ${randomNumber} )`, againPlayOptions) 
+            return bot.sendMessage(chatId, `Yo'q, yo'q! Sizning raqamingiz ${userNumber} va tasodifiy son ( ${randomNumber} ) edi`, againPlayOptions)
         }
 
     })

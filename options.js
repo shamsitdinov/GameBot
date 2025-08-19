@@ -26,7 +26,7 @@ export const againPlayOptions = {
     reply_markup: {
         inline_keyboard: [
             [
-                { text: 'Again play', callback_data: '/again' }
+                { text: "O'yinni qayta"  , callback_data: '/again' }
             ]
         ]
     }
