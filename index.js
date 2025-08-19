@@ -15,7 +15,7 @@ function botPlay() {
         const text = message.text
         if (text === '/start') {
             await bot.sendSticker(chatId, "https://cdn2.combot.org/zane_fozol_0_9/webp/26xf09fa4a0.webp")
-            return bot.sendMessage(chatId, `Good morning ${message.chat.first_name}`)
+            return bot.sendMessage(chatId, `Salom  ${message.chat.first_name}`)
         }
         if (text === '/about') {
             return bot.sendMessage(chatId, `My telegram channel t.me/nodir_dev1`)
@@ -40,9 +40,9 @@ function botPlay() {
             return bot.sendMessage(chatId, 'Raqamini kiriting 0-9', playOptions)
         }
         if (userNumber == randomNumber) {
-            return bot.sendMessage(chatId, `Tabriklaymiz! Sizning raqamingiz ${userNumber} va tasodifiy son${randomNumber}`, againPlayOptions)
+            return bot.sendMessage(chatId, `Tabriklaymiz! Sizning raqamingiz ${userNumber} va tasodifiy son ( ${randomNumber} )`, againPlayOptions)
         } else {
-            return bot.sendMessage(chatId, `Yo'q, yo'q! Sizning raqamingiz ${userNumber} va tasodifiy son${randomNumber}`, againPlayOptions)
+            return bot.sendMessage(chatId, `Yo'q, yo'q! Sizning raqamingiz ${userNumber} va tasodifiy son ( ${randomNumber} )`, againPlayOptions) 
         }
 
     })
