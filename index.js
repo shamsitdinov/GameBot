@@ -21,14 +21,14 @@ function botPlay() {
             return bot.sendMessage(chatId, `My telegram channel t.me/nodir_dev1`)
         }
         if (text === '/play') {
-            await bot.sendMessage(chatId, 'Find a random number')
-            return bot.sendMessage(chatId, 'Enter a number 0-9', playOptions)
+            await bot.sendMessage(chatId, 'Tasodifiy raqamni toping')
+            return bot.sendMessage(chatId, 'Raqamini kiriting 0-9', playOptions)
         }
         if (text === '/again') {
-            await bot.sendMessage(chatId, 'Find a random number')
-            return bot.sendMessage(chatId, 'Enter a number 0-9', playOptions)
+            await bot.sendMessage(chatId, 'Tasodifiy raqamni toping')
+            return bot.sendMessage(chatId, 'Raqamini kiriting 0-9', playOptions)
         }
-        return bot.sendMessage(chatId, 'Error order')
+        return bot.sendMessage(chatId, "Xato o'yladingiz ! 😩")
     })
     bot.on('callback_query', async message => {
         let randomNumber = Math.floor(Math.random() * 10)
@@ -36,13 +36,13 @@ function botPlay() {
         const chatId = message.message.chat.id
         console.log(randomNumber)
         if (userNumber == "/again") {
-            await bot.sendMessage(chatId, 'Find a random number')
-            return bot.sendMessage(chatId, 'Enter a number 0-9', playOptions)
+            await bot.sendMessage(chatId, 'Tasodifiy raqamni toping')
+            return bot.sendMessage(chatId, 'Raqamini kiriting 0-9', playOptions)
         }
         if (userNumber == randomNumber) {
-            return bot.sendMessage(chatId, `Congratulations! Your number is ${userNumber} and random number is ${randomNumber}`, againPlayOptions)
+            return bot.sendMessage(chatId, `Tabriklaymiz! Sizning raqamingiz ${userNumber} va tasodifiy son${randomNumber}`, againPlayOptions)
         } else {
-            return bot.sendMessage(chatId, `No no! Your number is ${userNumber} and random number is ${randomNumber}`, againPlayOptions)
+            return bot.sendMessage(chatId, `Yo'q, yo'q! Sizning raqamingiz ${userNumber} va tasodifiy son${randomNumber}`, againPlayOptions)
         }
 
     })
