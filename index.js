@@ -57,47 +57,10 @@
 
 
 
-// import express from "express";
-// import TelegramBot from "node-telegram-bot-api";
-// import "dotenv/config";
-
-// const app = express();
-// const PORT = process.env.PORT || 3000;
-
-// // Botni webhook rejimida ishlatamiz
-// const bot = new TelegramBot(process.env.TELEGRAM_TOKEN);
-// bot.setWebHook(`${process.env.WEBHOOK_URL}/bot${process.env.TELEGRAM_TOKEN}`);
-
-// // Telegram webhook uchun body parser
-// app.use(express.json());
-
-// // Telegram dan keladigan update’larni qabul qilish
-// app.post(`/bot${process.env.TELEGRAM_TOKEN}`, (req, res) => {
-//   bot.processUpdate(req.body);
-//   res.sendStatus(200);
-// });
-
-// // /start komandasi
-// bot.onText(/\/start/, async (msg) => {
-//   const chatId = msg.chat.id;
-//   await bot.sendMessage(chatId, `Salom ${msg.chat.first_name} 👋`);
-// });
-
-// // /about komandasi
-// bot.onText(/\/about/, async (msg) => {
-//   const chatId = msg.chat.id;
-//   await bot.sendMessage(chatId, "Mening telegram kanal: t.me/nodir_dev1");
-// });
-
-// app.listen(PORT, () => {
-//   console.log(`Server ${PORT}-portda ishlayapti`);
-// });
-
-
 import express from "express";
 import TelegramBot from "node-telegram-bot-api";
 import { playOptions, againPlayOptions } from "./options.js";
-import "dotenv/config";
+import "dotenv/config"; 
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -137,7 +100,7 @@ function botPlay() {
     }
 
     if (text === "/about") {
-      return bot.sendMessage(chatId, `My telegram channel 👉 t.me/nodir_dev1`);
+      return bot.sendMessage(chatId, `Mening profilim 👉 t.me/nodir_dev1`);
     }
 
     if (text === "/play" || text === "/again") {
