@@ -66,7 +66,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Botni webhook rejimida ishlatamiz
-const bot = new TelegramBot(process.env.TELEGRAM_TOKEN);
+const bot = new TelegramBot(process.env.TELEGRAM_TOKEN,{polling:false});
 bot.setWebHook(`${process.env.WEBHOOK_URL}/bot${process.env.TELEGRAM_TOKEN}`);
 
 app.use(express.json());
