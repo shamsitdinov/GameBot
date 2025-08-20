@@ -93,26 +93,23 @@ function botPlay() {
   bot.on("message", async (message) => {
     const chatId = message.chat.id;
     const text = message.text;
-    
+ 
     const opts = {
-      reply_to_message_id:message.chat.id,
+      reply_to_message_id: message.chat.id,
       reply_markup: {
         resize_keyboard: true,
         one_time_keyboard: true,
         keyboard: [['Namoz vaqtlari']]
       }
     };
-    
+
     if (text === "/start") {
       await bot.sendSticker(
         chatId,
         "https://cdn2.combot.org/zane_fozol_0_9/webp/26xf09fa4a0.webp"
       );
-      return bot.sendMessage(chatId, `Salom ${message.chat.first_name} 🎱 O'yin o'ynash uchun bosing 👇🏻`, opts);
+      return bot.sendMessage(chatId, `Salom ${message.chat.first_name} 🎱 O'yin o'ynash uchun bosing 👇🏻`,opts);
     }
-
-
-
     if (text === "/about") {
       return bot.sendMessage(chatId, `Mening profilim 👉 t.me/nodir_dev1`);
     }
