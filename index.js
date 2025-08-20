@@ -84,7 +84,19 @@ bot.setMyCommands([
   { command: "/play", description: "O'yin o'ynash" },
   { command: "/again", description: "Qaytadan o'ynash" },
 ]);
- 
+
+const opts = {
+  reply_to_message_id: msg.message_id,
+  reply_markup: {
+    resize_keyboard: true,
+    one_time_keyboard: true,
+    keyboard: [['Namoz vaqtlari']]
+  }
+};
+
+
+
+
 // 🔹 Bot logikasi
 function botPlay() {
   bot.on("message", async (message) => {
@@ -96,8 +108,10 @@ function botPlay() {
         chatId,
         "https://cdn2.combot.org/zane_fozol_0_9/webp/26xf09fa4a0.webp"
       );
-      return bot.sendMessage(chatId, `Salom ${message.chat.first_name}`);
+      return bot.sendMessage(chatId, `Salom ${message.chat.first_name} 🎱 O'yin o'ynash uchun bosing 👇🏻`,opts);
     }
+
+
 
     if (text === "/about") {
       return bot.sendMessage(chatId, `Mening profilim 👉 t.me/nodir_dev1`);
@@ -108,7 +122,7 @@ function botPlay() {
       return bot.sendMessage(chatId, "Raqamini kiriting 0-9", playOptions);
     }
 
-    return bot.sendMessage(chatId, "Xato o'yladingiz ! 😩");
+    return bot.sendMessage(chatId, "Tugmadan foydalaning ! 😩");
   });
 
   bot.on("callback_query", async (message) => {
